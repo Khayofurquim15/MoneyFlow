@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --cor-fundo: #f2f4f7;
+    --cor-card: #ffffff;
+    --cor-principal: #168f5e;
+    --cor-escura: #116946;
+    --cor-clara: #168f5e;
+    --cor-texto: #646464;
+    --font-principal: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    font-family: var(--font-principal);
+    background-color: var(--cor-fundo);
+}   
+
+.container{
+    width: 100%;
+    height: 100%;
+
+    display: grid;    
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: 100px 1fr;
+    gap: 10px;
+}
+header{
+    background-color: var(--cor-escura);
+    padding: 10px;
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.637);
+}
+header > h1{
+    padding: 10px 10px 0 10px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.603);    
+    color: white;    
+    font-size: 1.6em
+}
+
+header p{
+    color: #063824;
+    padding-left: 15px;
+}
+
+main{
+    grid-column: 2 / 3 ;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+}
+
+section.info{
+    background-color: var(--cor-principal);
+    border-radius: 10px 10px 0 0;
+    color: white;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.582);
+}
+section.info .bloco-pessoa{
+    padding: 10px;
+    color: white;
+}
+section.info > div.saldo{
+    display: flex ;
+    gap: 10px;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    padding: 10px 20px 20px 20px;
+}
+.bloco-saldo{
+    background-color: var(--cor-escura);
+    padding: 20px;
+    border-radius: 10px;
+}
+.bloco-saldo p{
+    color: white;
+    font-size: 1.2em;
+}
+.info > p{
+    color: #063824;
+    margin-left: 25px;
+}
+
+div.saldo p{
+    font-size: 1em;
+    
+}
+
+section.movimentos{
+    background-color: var(--cor-card) ;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.205);
+}
+
+#listaMov{
+    list-style-type: none;
+    list-style-position: inside;
+}
+#listaMov > li{
+    background-color: lightgrey;
+    display: flex;
+    flex-flow: row nowrap;
+
+}
+
+#listaMov > li p{
+    display: inline-block;
+}
+
+footer{
+    grid-column:  2 / 3;
+    grid-row: 3;
+}
+

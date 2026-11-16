@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoneyFlow</title>
+    <link rel="stylesheet" href="estilos/mobile.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+                <h1>MoneyFlow</h1>
+                <p>Um gerenciador financeiro para uso pessoal.<p>
+        </header>
+
+        <main>            
+
+            <section class="info">
+
+                <div class="bloco-pessoa">
+                    <h1>Olá, Usuario</h1>
+                </div>
+                <p>VISÃO GERAL</p>
+
+                <div class="saldo" >
+
+                    <div class="bloco-saldo" id="saldoTotal" >
+                        <p>saldo total</p>
+                        <h2>R$ 240.700,00</h2>
+                    </div>
+
+                    <div class="bloco-saldo" id="receitaTotal" >
+                        <p>receitas totais</p>
+                        <h2>R$ 3.00,00</h2>
+                    </div>
+
+                    <div class="bloco-saldo" id="despesaTotal" >
+                        <p>despesas totais</p>
+                        <h2>R$ 1.680,90</h2>
+                    </div>
+
+                </div>
+
+            </section><!-- FIM DO INFO -->
+
+            <section class="movimentos">
+
+                <h2>Movimentação</h2>
+                <ul id="listaMov" >
+                    <li>
+                        <div>
+                            <p>foto</p> <p>nome</p> <p>data</p>
+                        </div> 
+                        <p>valor</p>
+                    </li>
+                </ul>
+
+            </section>
+
+            <section class="criar-movimento">
+
+                <div class="bloco-movimento" >
+                    <button onclick="mostarForm()" >Adicionar Movimentação</button>
+                </div>
+
+                <div id="formMov">
+                    <div>
+                        <label for="descMov">Descrição: </label>
+                        <input type="text" id="descMov" placeholder="Pequena descrição" required minlength="8" maxlength="30" >
+                    </div>
+
+                    <div>
+                        <label for="valorMov">Valor: </label>
+                        <input type="number" name="valorM" id="valorMov" required placeholder="ex: 00,000">
+                    </div>
+
+                    <div>
+                        <label for="cateMov">Categoria: </label>
+                        <select name="categoria" id="cateMov">
+                            <option value="outro">Outro</option>
+                            <option value="alimento">Alimento</option>
+                            <option value="energia">Energia</option>
+                            <option value="salario">Salario</option>
+                            <option value="extra">Extra</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="receita">Receita</label>
+                        <input type="radio" name="tipos" id="receita">
+
+                        <label for="despesa">Despesa</label>
+                        <input type="radio" name="tipos" id="despesa">
+                    </div>
+
+                    <div>
+                        <button onclick="addMov()">+ Adicionar Movimentação</button>
+                    </div>
+
+                </div>
+
+            </section> <!-- FIM CRIAR MOVIMENTO -->
+
+        </main>
+
+        <footer>
+            <p>Em breve...</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
