@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoneyFlow</title>
     <link rel="stylesheet" href="estilos/mobile.css">
+    <script src="https://kit.fontawesome.com/82590b91d6.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
@@ -24,19 +25,19 @@
 
                 <div class="saldo" >
 
-                    <div class="bloco-saldo" id="saldoTotal" >
+                    <div class="bloco-saldo" >
                         <p>saldo total</p>
-                        <h2>R$ 240.700,00</h2>
+                        <h2 id="saldoTotal">R$ 240.700,00</h2>
                     </div>
 
-                    <div class="bloco-saldo" id="receitaTotal" >
-                        <p>receitas totais</p>
-                        <h2>R$ 3.00,00</h2>
+                    <div class="bloco-saldo">
+                        <p >receitas totais</p>
+                        <h2 id="receitaTotal">R$ 3.00,00</h2>
                     </div>
 
                     <div class="bloco-saldo" id="despesaTotal" >
                         <p>despesas totais</p>
-                        <h2>R$ 1.680,90</h2>
+                        <h2 id="despesaTotal" >R$ 1.680,90</h2>
                     </div>
 
                 </div>
@@ -45,13 +46,22 @@
 
             <section class="movimentos">
 
-                <h2>Movimentação</h2>
+                <h2>Suas Movimentação</h2>
                 <ul id="listaMov" >
                     <li>
-                        <div>
-                            <p>foto</p> <p>nome</p> <p>data</p>
+                        <div class="bloco" >
+                            <div class="indicador-bom" ><i class="fa-solid fa-thumbs-up"></i> </div> <p>Pagamento</p> 
                         </div> 
-                        <p>valor</p>
+                        <p>17/11/2026</p>
+                        <p>+ R$ 2.700,00</p>
+                    </li>
+
+                    <li>
+                        <div class="bloco" >
+                            <div class="indicador-ruim" ><i class="fa-solid fa-thumbs-down"></i> </div> <p>Internet</p> 
+                        </div> 
+                        <p>19/11/2026</p>
+                        <p>- R$ 120,00</p>
                     </li>
                 </ul>
 

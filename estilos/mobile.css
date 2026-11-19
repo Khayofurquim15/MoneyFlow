@@ -91,14 +91,17 @@ section.info > div.saldo{
 
 div.saldo p{
     font-size: 1em;
-    
 }
 
 section.movimentos{
     background-color: var(--cor-card) ;
     padding: 10px;
+    padding-top: 20px;
     border-radius: 0 0 10px 10px;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.205);
+}
+section.movimentos h2{
+    font-size: 1.3em;
 }
 
 #listaMov{
@@ -106,14 +109,41 @@ section.movimentos{
     list-style-position: inside;
 }
 #listaMov > li{
-    background-color: lightgrey;
+    background-color: rgb(231, 231, 231);
     display: flex;
     flex-flow: row nowrap;
-
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.404);
 }
 
 #listaMov > li p{
     display: inline-block;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+#listaMov div.bloco{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 10px;
+}
+#listaMov div.bloco > .indicador-bom{
+    background-color: #168f5e;
+    color: white;
+    font-size: 1.4em;
+    font-weight: bold;
+    border-radius: 5px;
+}
+#listaMov div.bloco > .indicador-ruim{
+    background-color: rgb(219, 48, 48);
+    color: white;
+    font-size: 1.4em;
+    font-weight: bold;
+    border-radius: 5px;
 }
 
 footer{
