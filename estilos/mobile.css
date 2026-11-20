@@ -41,7 +41,7 @@ header > h1{
     padding: 10px 10px 0 10px;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.603);    
     color: white;    
-    font-size: 1.6em
+    font-size: 1.6em;
 }
 
 header p{
@@ -79,6 +79,7 @@ section.info > div.saldo{
     background-color: var(--cor-escura);
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.308);    
 }
 .bloco-saldo p{
     color: white;
@@ -102,23 +103,35 @@ section.movimentos{
 }
 section.movimentos h2{
     font-size: 1.3em;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: underline;
 }
 
 #listaMov{
+    background-color:#c5e6d88a ;    
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.295);    
+    border-radius: 10px;    
     list-style-type: none;
     list-style-position: inside;
 }
+
 #listaMov > li{
-    background-color: rgb(231, 231, 231);
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    border-radius: 10px;
+    padding-left: 0;
     margin: 10px;
     margin-bottom: 20px;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.404);
+    transition: transform 0.3s, padding 0.3s;
+    cursor: pointer;
+}
+#listaMov > li:hover{
+    transform: scale(1.06);
+    padding: 10px;
 }
 
 #listaMov > li p{
@@ -144,6 +157,26 @@ section.movimentos h2{
     font-size: 1.4em;
     font-weight: bold;
     border-radius: 5px;
+}
+
+section.criar-movimento{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+section.criar-movimento > button{
+    padding: 20px;
+    border: none;
+    background-color: var(--cor-escura);
+    color: white;
+    font-size: 1.1em;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.5s, border 0.5s;
+}
+section.criar-movimento > button:hover{
+    background-color: var(--cor-clara);
+    border: 2px solid var(--cor-escura);
 }
 
 footer{
