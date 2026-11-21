@@ -7,13 +7,15 @@
 }
 
 :root{
-    --cor-fundo: #f2f4f7;
+    --cor-fundo: #e3e5e7;
     --cor-card: #ffffff;
-    --cor-principal: #168f5e;
-    --cor-escura: #116946;
-    --cor-clara: #168f5e;
+    --cor-principal: #178157;
+    --cor-escura: #136343;
+    --cor-clara: #1a8a5d;
     --cor-texto: #646464;
     --font-principal: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-titulo:'Courier New', Courier, monospace;
+    --font-sub:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 body{
@@ -27,21 +29,22 @@ body{
 
     display: grid;    
     grid-template-columns: auto 1fr auto;
-    grid-template-rows: 100px 1fr;
+    grid-template-rows: 90px 1fr;
     gap: 10px;
 }
 header{
-    background-color: var(--cor-escura);
+    background-color: var(--cor-card);
     padding: 10px;
     grid-column: 1 / 4;
     grid-row: 1 / 2;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.637);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.432);
 }
 header > h1{
-    padding: 10px 10px 0 10px;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.603);    
-    color: white;    
-    font-size: 1.6em;
+    padding: 5px 10px 0 10px;
+    color: var(--cor-escura);    
+    font-size: 1.9em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.192);
+    font-family: var(--font-titulo) ;
 }
 
 header p{
@@ -57,7 +60,7 @@ main{
 }
 
 section.info{
-    background-color: var(--cor-principal);
+    background-color: var(--cor-escura);
     border-radius: 10px 10px 0 0;
     color: white;
     padding-bottom: 20px;
@@ -76,7 +79,7 @@ section.info > div.saldo{
     padding: 10px 20px 20px 20px;
 }
 .bloco-saldo{
-    background-color: var(--cor-escura);
+    background-color: var(--cor-principal);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.308);    
@@ -102,6 +105,7 @@ section.movimentos{
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.205);
 }
 section.movimentos h2{
+    font-family: var(--font-sub);
     font-size: 1.3em;
     margin-bottom: 20px;
     margin-top: 10px;
@@ -110,8 +114,8 @@ section.movimentos h2{
 }
 
 #listaMov{
-    background-color:#c5e6d88a ;    
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.295);    
+    background-color:#c5e6d863 ;    
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.158);    
     border-radius: 10px;    
     list-style-type: none;
     list-style-position: inside;
@@ -160,25 +164,113 @@ section.movimentos h2{
 }
 
 section.criar-movimento{
+    background-color: var(--cor-escura);
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.342);
+
     display: flex;
     flex-flow: column nowrap;
+    align-items: center;
 }
-
-section.criar-movimento > button{
+button#btnCriarMov{
     padding: 20px;
     border: none;
-    background-color: var(--cor-escura);
+    width: 100%;
+    margin-top: 10px;
+    background-color: var(--cor-principal);
     color: white;
     font-size: 1.1em;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.5s, border 0.5s;
+    transition: background-color 0.5s, transform 0.5s ;
+    margin-bottom: 20px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.623);
 }
-section.criar-movimento > button:hover{
-    background-color: var(--cor-clara);
-    border: 2px solid var(--cor-escura);
+button#btnCriarMov:hover{
+    background-color: #279267;
+    transform: scale(1.03);
+}
+#formMov{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 10px;
+    align-items: center;
+}
+section.criar-movimento .bloco-form{
+    width: 99%;
+    background-color: var(--cor-card);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    color: var(--cor-texto);
+    display: flex;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.322);
+}
+section.criar-movimento > h2{
+    font-family: var(--font-sub) ;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+}
+.criar-movimento .bloco-form input{
+    border-radius: 5px;
+    border: none;
+    padding: 12px;
+    font-size: 1em;
+}
+#formMov #bloco-nome > input, #bloco-valor > input{
+    width: 100%;
+    height: 100%;
+}
+#formMov #bloco-nome > label, #bloco-valor > label{
+    background-color: #063824;
+    color: white;
+    padding: 12px;
+    width: 100px;
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+    font-weight: bold;
 }
 
+#formMov div#categorias {
+    width: 300px;
+    display: flex;
+    margin-top: 10px;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    padding: 10px;
+    border-left: 20px solid var(--cor-clara);
+    border-right: 20px solid var(--cor-clara);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.473);
+    color: black;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+#formMov div#categorias select{
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.24);
+}
+#formMov div#tipo {
+    width: 300px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    padding: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: black;
+}
+div#tipo > .bloco-receita{
+    background-color: var(--cor-card);
+}
+div#tipo > .bloco-despesa{
+    
+}
 footer{
     grid-column:  2 / 3;
     grid-row: 3;

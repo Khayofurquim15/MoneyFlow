@@ -10,8 +10,8 @@
 <body>
     <div class="container">
         <header>
-                <h1>MoneyFlow</h1>
-                <p>Um gerenciador financeiro para uso pessoal.<p>
+            <h1>MoneyFlow <i class="fa-solid fa-money-bill-wave"></i> </h1>
+            <p>O seu gerenciador financeiro pessoal.<p>
         </header>
 
         <main>            
@@ -69,21 +69,22 @@
 
             <section class="criar-movimento">
 
-                <button onclick="mostarForm()" >Adicionar Movimentação</button>
+                <h2>Nova Movimentação <i class="fa-solid fa-trowel-bricks"></i> </h2>
 
                 <div id="formMov">
-                    <div>
-                        <label for="descMov">Descrição: </label>
-                        <input type="text" id="descMov" placeholder="Pequena descrição" required minlength="8" maxlength="30" >
+                    <div class="bloco-form" id="bloco-nome" >
+                        <label for="nomeMov">Nome </label>
+                        <input type="text" id="nomeMov" placeholder="Nome da Movimentação" required minlength="4" maxlength="12" >
                     </div>
 
-                    <div>
-                        <label for="valorMov">Valor: </label>
-                        <input type="number" name="valorM" id="valorMov" required placeholder="ex: 00,000">
+                    <div class="bloco-form" id="bloco-valor" >
+                        <label for="valorMov">Valor </label>
+                        <input type="number" name="valorM" id="valorMov" required placeholder="00,000">
                     </div>
 
-                    <div>
-                        <label for="cateMov">Categoria: </label>
+                    <div class="bloco-form" id="categorias" >
+                        <label for="cateMov">Categoria </label>
+                        <p>-</p>
                         <select name="categoria" id="cateMov">
                             <option value="outro">Outro</option>
                             <option value="alimento">Alimento</option>
@@ -93,21 +94,27 @@
                         </select>
                     </div>
 
-                    <div>
-                        <label for="receita">Receita</label>
-                        <input type="radio" name="tipos" id="receita">
+                    <div class="bloco-form" id="tipo" >
 
-                        <label for="despesa">Despesa</label>
-                        <input type="radio" name="tipos" id="despesa">
-                    </div>
+                        <div class="bloco-receita">
+                            <label for="receita">Receita</label>
+                            <input type="radio" name="tipos" id="receita">      
+                        </div>
 
-                    <div>
-                        <button onclick="addMov()">+ Adicionar Movimentação</button>
+                        <div class="bloco-despesa" >
+                            <label for="despesa">Despesa</label>
+                            <input type="radio" name="tipos" id="despesa">
+                        </div>
+
                     </div>
 
                 </div>
 
             </section> <!-- FIM CRIAR MOVIMENTO -->
+                <div>
+                    <button id="btnCriarMov" onclick="addMov()">+ Adicionar Movimentação</button>
+                </div>
+
 
         </main>
 
