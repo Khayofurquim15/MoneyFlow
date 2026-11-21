@@ -5,17 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoneyFlow</title>
     <link rel="stylesheet" href="estilos/mobile.css">
+    <link rel="stylesheet" href="estilos/desktop.css" media="screen and (min-width:760px)">
     <script src="https://kit.fontawesome.com/82590b91d6.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
+
         <header>
             <h1>MoneyFlow <i class="fa-solid fa-money-bill-wave"></i> </h1>
             <p>O seu gerenciador financeiro pessoal.<p>
         </header>
+        <menu>
+            <a href="#">Minha Conta</a>
+            <a href="#">Contato</a>
+            <a href="#">Saiba Mais</a>
+            <a href="#">Ajuda</a>
+        </menu>
 
-        <main>            
-
+        <main>     
+            
             <section class="info">
 
                 <div class="bloco-pessoa">
@@ -67,7 +74,7 @@
 
             </section>
 
-            <section class="criar-movimento">
+            <section class="criar-movimento"> 
 
                 <h2>Nova Movimentação <i class="fa-solid fa-trowel-bricks"></i> </h2>
 
@@ -110,23 +117,14 @@
 
                 </div>
 
+                <button id="btnCriarMov" onclick="addMov()">+ Adicionar Movimentação</button>
             </section> <!-- FIM CRIAR MOVIMENTO -->
-                <div>
-                    <button id="btnCriarMov" onclick="addMov()">+ Adicionar Movimentação</button>
-                </div>
-
 
         </main>
 
         <footer>
             <h2>MoneyFlow</h2>
-            <div>
-                <a href="">Saiba Mais <i class="fa-solid fa-paperclip"></i></a>
-                <a href="">Contato <i class="fa-solid fa-paperclip"></i></a>
-            </div>
         </footer>
-
-    </div>
 
     <script src="script.js"></script>
 </body>

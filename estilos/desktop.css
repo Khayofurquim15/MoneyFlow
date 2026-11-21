@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+main{
+    grid-template-columns: auto 1fr 700px auto;
+    column-gap: 20px;
+}
+
+section.info{
+    grid-column: 2 / 3;
+    margin-bottom: 0;
+    padding: 10px;
+}
+
+section.movimentos{
+    grid-column: 2 / 3;
+    grid-row: 2;
+    margin-bottom: 40px;
+}
+section.criar-movimento{
+    grid-column: 3 / 4;
+    grid-row: 1/ 2;
+    margin-bottom: 0;
+}
+menu{
+    padding-left: 20px;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+#listaMov{
+    width: 90%;
+    margin: auto;
+}

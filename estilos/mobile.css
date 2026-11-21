@@ -23,21 +23,20 @@ body{
     background-color: var(--cor-fundo);
 }   
 
-.container{
+main{
     width: 100%;
     height: 100%;
 
     display: grid;    
     grid-template-columns: auto 1fr auto;
-    grid-template-rows: 90px 1fr;
-    gap: 10px;
+    grid-template-rows: 1fr;
+    column-gap: 10px;
 }
 header{
     background-color: var(--cor-card);
     padding: 10px;
-    grid-column: 1 / 4;
-    grid-row: 1 / 2;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.432);
+    height: 90px;
 }
 header > h1{
     padding: 5px 10px 0 10px;
@@ -51,12 +50,26 @@ header p{
     color: #063824;
     padding-left: 15px;
 }
+menu{   
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    background-color: var(--cor-card);
+    padding: 10px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.178);
+    margin-bottom: 20px;
+}
 
-main{
-    grid-column: 2 / 3 ;
-    grid-row: 2;
-    width: 100%;
-    height: 100%;
+menu a{
+    color: black;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    transition: text-decoration 0.5s, color 0.5s;
+}
+menu a:hover{
+    text-decoration: underline;
+    color: var(--cor-principal);
 }
 
 section.info{
@@ -66,6 +79,7 @@ section.info{
     padding-bottom: 20px;
     margin-top: 20px;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.582);
+    grid-column: 2/3;
 }
 section.info .bloco-pessoa{
     padding: 10px;
@@ -103,6 +117,8 @@ section.movimentos{
     padding-top: 20px;
     border-radius: 0 0 10px 10px;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.205);
+    grid-column: 2 / 3;
+    height: 300px;
 }
 section.movimentos h2{
     font-family: var(--font-sub);
@@ -114,22 +130,20 @@ section.movimentos h2{
 }
 
 #listaMov{
-    background-color:#c5e6d863 ;    
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.158);    
-    border-radius: 10px;    
     list-style-type: none;
     list-style-position: inside;
 }
 
 #listaMov > li{
+    background-color:#c5e6d863;      
+    padding: 10px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.158);    
+    border-radius: 10px;       
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    padding-left: 0;
-    margin: 10px;
-    margin-bottom: 20px;
+    margin: 10px 10px 20px 10px;
     transition: transform 0.3s, padding 0.3s;
     cursor: pointer;
 }
@@ -166,9 +180,11 @@ section.movimentos h2{
 section.criar-movimento{
     background-color: var(--cor-escura);
     margin-top: 20px;
+    margin-bottom: 30px;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.342);
+    grid-column: 2 / 3;
 
     display: flex;
     flex-flow: column nowrap;
@@ -177,7 +193,7 @@ section.criar-movimento{
 button#btnCriarMov{
     padding: 20px;
     border: none;
-    width: 100%;
+    width: 400px;
     margin-top: 10px;
     background-color: var(--cor-principal);
     color: white;
@@ -208,10 +224,10 @@ section.criar-movimento .bloco-form{
     display: flex;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.322);
 }
-section.criar-movimento > h2{
+section.criar-movimento h2{
     font-family: var(--font-sub) ;
     text-decoration: underline;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     margin-top: 10px;
     color: white;
     text-align: center;
@@ -277,31 +293,13 @@ div#tipo > .bloco-despesa{
     color: white;
 }
 footer{
-    grid-column:  1 / 4;
-    grid-row: 3;
-    background-color: var(--cor-card);
+    background-color: var(--cor-principal);
     padding: 20px;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.336);
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.521);
 }
 
 footer > h2{
     text-align: center;
     font-family: var(--font-titulo);
-    color: var(--cor-escura);
-    padding-bottom: 15px;
-}
-footer a{
-    color: black;
-    text-decoration: none;
-    font-size: 1em;
-    font-weight: bold;
-}
-footer a:hover{
-    text-decoration: underline;
-    color: blue;
-}
-footer > div{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
+    color: var(--cor-card);
 }
