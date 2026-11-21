@@ -237,7 +237,6 @@ section.criar-movimento > h2{
 }
 
 #formMov div#categorias {
-    width: 300px;
     display: flex;
     margin-top: 10px;
     flex-flow: row nowrap;
@@ -256,23 +255,32 @@ section.criar-movimento > h2{
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.24);
 }
 #formMov div#tipo {
-    width: 300px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-    padding: 10px;
     font-size: 1.1em;
     font-weight: bold;
     color: black;
 }
 div#tipo > .bloco-receita{
     background-color: var(--cor-card);
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
 }
 div#tipo > .bloco-despesa{
-    
+    background-color: var(--cor-clara);
+    width: 100%;
+    padding: 10px;
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 9px;
+    color: white;
 }
 footer{
-    grid-column:  2 / 3;
+    grid-column:  1 / 4;
     grid-row: 3;
+    background-color: var(--cor-card);
+    padding: 20px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.336);
 }
 
