@@ -140,7 +140,6 @@ section.movimentos h2{
     border-radius: 10px;       
     margin: 10px 10px 20px 10px;
     transition: transform 0.3s, padding 0.3s;
-    cursor: pointer;
 }
 #listaMov > li:hover{
     transform: scale(1.06);
@@ -155,7 +154,6 @@ section.movimentos h2{
 
 #listaMov div.bloco-saibaMais{
     padding: 10px;
-    background-color: #136343;
     display: none;
     margin-top: 10px;
 }
@@ -166,6 +164,13 @@ div.bloco-lista{
     justify-content: space-between;
     align-items: center;
     width: 100%;
+}
+div.bloco-lista > button{
+    padding-right: 10px;
+    background-color: #c5e6d800;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
 }
 
 #listaMov div.bloco{

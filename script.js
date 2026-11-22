@@ -18,7 +18,7 @@ formMov.addEventListener('submit', (evento)=> { // CHAMA O BOTAO PARA ADICIONAR 
         nome: String(nomeMov.value),
         valor: Number(valorMov.value).toLocaleString('pt-br', {style:'currency',currency:'BRL'}),
         tipo: String(tipoMov.value),
-        categoria: String(categMov.value),
+        categoria: categMov,
         data: new Date().toLocaleDateString("pt-BR")
     };
 
@@ -59,7 +59,7 @@ function mostrarMov(){
                             </div> 
                             <p> ${mov.data} </p>
                             <p>+ ${mov.valor}</p>
-                            <button onclick="verMais(${mov.id})" >Ver Mais</button>
+                            <button onclick="verMais(${mov.id})" ><i class="fa-solid fa-bars"></i></button>
                         </div>
 
                         <div class="bloco-saibaMais" id="${mov.id}" >
@@ -77,7 +77,7 @@ function mostrarMov(){
                             </div> 
                             <p> ${mov.data} </p>
                             <p>- ${mov.valor} </p>
-                            <button onclick="verMais(${mov.id})" >Ver Mais</button>
+                            <button onclick="verMais(${mov.id})" ><i class="fa-solid fa-bars"></i></button>
                         </div>
 
                         <div class="bloco-saibaMais" id="${mov.id}" >
@@ -101,7 +101,7 @@ function verMais(idDiv){
 
     if(divMais.style.display == 'flex'){
         divMais.style.display = 'none';
-        
+
     }else{
         divMais.style.display = 'flex';
     };
