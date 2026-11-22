@@ -157,6 +157,22 @@ section.movimentos h2{
     display: none;
     margin-top: 10px;
 }
+.bloco-saibaMais > button{
+    padding: 10px;
+    width: 200px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--cor-clara);
+    color: white;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.411);
+    transition: background-color 0.3s, transform 0.3s;
+}
+.bloco-saibaMais > button:hover{
+    background-color: var(--cor-escura);
+    transform: scale(1.03);
+}
 
 div.bloco-lista{
     display: flex;

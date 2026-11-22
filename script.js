@@ -22,6 +22,9 @@ formMov.addEventListener('submit', (evento)=> { // CHAMA O BOTAO PARA ADICIONAR 
         data: new Date().toLocaleDateString("pt-BR")
     };
 
+    nomeMov.value = '';
+    valorMov.value = '';
+
     movimentacoes.push(movimentacao);
     salvarMov();
     carregarMov()
@@ -63,7 +66,7 @@ function mostrarMov(){
                         </div>
 
                         <div class="bloco-saibaMais" id="${mov.id}" >
-                            em breve
+                            <button onclick="excluirMov(${mov.id})" >Excluir</button>
                         </div>
                     </li>
             `;
@@ -81,7 +84,7 @@ function mostrarMov(){
                         </div>
 
                         <div class="bloco-saibaMais" id="${mov.id}" >
-                            em breve
+                            <button onclick="excluirMov(${mov.id})" >Excluir</button>
                         </div>
                     </li>            
             `;
@@ -92,8 +95,11 @@ function mostrarMov(){
     });
 };
 
-function excluirMov(){
-    window.alert();
+function excluirMov(idMov){
+    movimentacoes = movimentacoes.filter(mov => mov.id !== idMov);
+    salvarMov();
+    carregarMov();
+    console.log('Movimentação excluida com sucesso...');
 };
 
 function verMais(idDiv){
