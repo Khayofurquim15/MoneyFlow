@@ -117,7 +117,7 @@ section.movimentos{
     border-radius: 0 0 10px 10px;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.205);
     grid-column: 2 / 3;
-    height: 300px;
+    min-height: 300px;
 }
 section.movimentos h2{
     font-family: var(--font-sub);
@@ -138,10 +138,6 @@ section.movimentos h2{
     padding: 10px;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.158);    
     border-radius: 10px;       
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
     margin: 10px 10px 20px 10px;
     transition: transform 0.3s, padding 0.3s;
     cursor: pointer;
@@ -156,6 +152,22 @@ section.movimentos h2{
     font-size: 1.1em;
     font-weight: bold;
 }
+
+#listaMov div.bloco-saibaMais{
+    padding: 10px;
+    background-color: #136343;
+    display: none;
+    margin-top: 10px;
+}
+
+div.bloco-lista{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
 #listaMov div.bloco{
     display: flex;
     flex-flow: row nowrap;

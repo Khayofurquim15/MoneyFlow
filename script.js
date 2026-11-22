@@ -1,6 +1,8 @@
 const formMov = document.getElementById('formMov');
 const listaMov = document.getElementById('listaMov');
+
 let movimentacoes = [];
+
 
 formMov.addEventListener('submit', (evento)=> { // CHAMA O BOTAO PARA ADICIONAR A MOVIMENTAÇÃO //
 
@@ -8,7 +10,7 @@ formMov.addEventListener('submit', (evento)=> { // CHAMA O BOTAO PARA ADICIONAR 
 
     const nomeMov = document.getElementById('nomeMov');
     const valorMov = document.getElementById('valorMov');
-    const categMov = document.getElementById('cateMov');
+    const categMov = document.querySelector('div[name=""]');
     const tipoMov = document.querySelector('input[name="tipos"]:checked');
 
     const movimentacao = {
@@ -50,23 +52,37 @@ function mostrarMov(){
 
         if(mov.tipo == 'receita'){
             listaMov.innerHTML += `
-                    <li>
-                        <div class="bloco" >
-                            <div class="indicador-bom" ><i class="fa-solid fa-circle-up"></i> </div> <p>${mov.nome}</p> 
-                        </div> 
-                        <p> ${mov.data} </p>
-                        <p>+ ${mov.valor}</p>
+                    <li onclick="maisInfo()" >
+                        <div class="bloco-lista" >
+                            <div class="bloco" >
+                                <div class="indicador-bom" ><i class="fa-solid fa-circle-up"></i> </div> <p>${mov.nome}</p> 
+                            </div> 
+                            <p> ${mov.data} </p>
+                            <p>+ ${mov.valor}</p>
+                            <button onclick="verMais(${mov.id})" >Ver Mais</button>
+                        </div>
+
+                        <div class="bloco-saibaMais" id="${mov.id}" >
+                            em breve
+                        </div>
                     </li>
             `;
 
         }else if(mov.tipo == 'despesa'){
             listaMov.innerHTML += `
-                    <li>
-                        <div class="bloco" >
-                            <div class="indicador-ruim" ><i class="fa-solid fa-circle-down"></i> </div> <p> ${mov.nome} </p> 
-                        </div> 
-                        <p> ${mov.data} </p>
-                        <p>- ${mov.valor} </p>
+                    <li onclick="maisInfo()">
+                        <div class="bloco-lista" >
+                            <div class="bloco" >
+                                <div class="indicador-ruim" ><i class="fa-solid fa-circle-down"></i> </div> <p> ${mov.nome} </p> 
+                            </div> 
+                            <p> ${mov.data} </p>
+                            <p>- ${mov.valor} </p>
+                            <button onclick="verMais(${mov.id})" >Ver Mais</button>
+                        </div>
+
+                        <div class="bloco-saibaMais" id="${mov.id}" >
+                            em breve
+                        </div>
                     </li>            
             `;
 
@@ -74,6 +90,21 @@ function mostrarMov(){
             console.log('error...');
         }
     });
+};
+
+function excluirMov(){
+    window.alert();
+};
+
+function verMais(idDiv){
+    const divMais = document.getElementById(idDiv);
+
+    if(divMais.style.display == 'flex'){
+        divMais.style.display = 'none';
+        
+    }else{
+        divMais.style.display = 'flex';
+    };
 };
 
 carregarMov();
