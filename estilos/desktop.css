@@ -26,6 +26,9 @@ menu{
     justify-content: flex-start;
     gap: 20px;
 }
+#listaMov > li:hover{
+    transform: scale(1.03);
+}
 
 #listaMov{
     width: 90%;

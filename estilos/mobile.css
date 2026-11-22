@@ -33,31 +33,30 @@ main{
     column-gap: 10px;
 }
 header{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--cor-card);
     padding: 10px;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.432);
     height: 90px;
+    margin-bottom: 20px;
 }
 header > h1{
-    padding: 5px 10px 0 10px;
+    padding-left: 20px;
     color: var(--cor-escura);    
     font-size: 1.9em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.192);
     font-family: var(--font-titulo) ;
 }
 
-header p{
-    color: #063824;
-    padding-left: 15px;
-}
 menu{   
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-    background-color: var(--cor-card);
     padding: 10px;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.178);
-    margin-bottom: 20px;
+    gap: 20px;
 }
 
 menu a{
@@ -302,4 +301,8 @@ footer > h2{
     text-align: center;
     font-family: var(--font-titulo);
     color: var(--cor-card);
+}
+footer > p{
+    text-align: center;
+    color: #063824;
 }

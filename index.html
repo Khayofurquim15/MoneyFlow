@@ -12,14 +12,14 @@
 
         <header>
             <h1>MoneyFlow <i class="fa-solid fa-money-bill-wave"></i> </h1>
-            <p>O seu gerenciador financeiro pessoal.<p>
+            <menu>
+                <a href="#">Minha Conta</a>
+                <a href="#">Contato</a>
+                <a href="#">Saiba Mais</a>
+                <a href="#">Ajuda</a>
+            </menu>
+
         </header>
-        <menu>
-            <a href="#">Minha Conta</a>
-            <a href="#">Contato</a>
-            <a href="#">Saiba Mais</a>
-            <a href="#">Ajuda</a>
-        </menu>
 
         <main>     
             
@@ -78,7 +78,8 @@
 
                 <h2>Nova Movimentação <i class="fa-solid fa-trowel-bricks"></i> </h2>
 
-                <div id="formMov">
+                <form autocomplete="on" id="formMov" >
+
                     <div class="bloco-form" id="bloco-nome" >
                         <label for="nomeMov">Nome </label>
                         <input type="text" id="nomeMov" placeholder="Nome da Movimentação" required minlength="4" maxlength="12" >
@@ -93,7 +94,7 @@
                         <label for="cateMov">Categoria </label>
                         <p>-</p>
                         <select name="categoria" id="cateMov">
-                            <option value="outro">Outro</option>
+                            <option value="outro" selected >Outro</option>
                             <option value="alimento">Alimento</option>
                             <option value="energia">Energia</option>
                             <option value="salario">Salario</option>
@@ -105,25 +106,27 @@
 
                         <div class="bloco-receita">
                             <label for="receita">Receita</label>
-                            <input type="radio" name="tipos" id="receita">      
+                            <input type="radio" name="tipos" id="receita" value="receita" checked >      
                         </div>
 
                         <div class="bloco-despesa" >
                             <label for="despesa">Despesa</label>
-                            <input type="radio" name="tipos" id="despesa">
+                            <input type="radio" name="tipos" id="despesa" value="despesa">
                         </div>
 
                     </div>
 
-                </div>
+                    <button type="submit" id="btnCriarMov">+ Adicionar Movimentação</button>
 
-                <button id="btnCriarMov" onclick="addMov()">+ Adicionar Movimentação</button>
+                </form>
+
             </section> <!-- FIM CRIAR MOVIMENTO -->
 
         </main>
 
         <footer>
             <h2>MoneyFlow</h2>
+            <p>O seu gerenciador financeiro pessoal.<p>
         </footer>
 
     <script src="script.js"></script>
