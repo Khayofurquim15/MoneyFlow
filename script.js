@@ -14,7 +14,7 @@ formMov.addEventListener('submit', (evento)=> { // CHAMA O BOTAO PARA ADICIONAR 
     const movimentacao = {
         id: Date.now(),
         nome: String(nomeMov.value),
-        valor: Number(valorMov.value),
+        valor: Number(valorMov.value).toLocaleString('pt-br', {style:'currency',currency:'BRL'}),
         tipo: String(tipoMov.value),
         categoria: String(categMov.value),
         data: new Date().toLocaleDateString("pt-BR")
