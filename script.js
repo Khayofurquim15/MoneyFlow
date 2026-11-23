@@ -113,4 +113,6 @@ function verMais(idDiv){
     };
 };
 
+const saldoTotal = movimentacoes.reduce()
+
 carregarMov();

@@ -193,6 +193,7 @@ div.bloco-lista > button{
     display: flex;
     flex-flow: row nowrap;
     gap: 10px;
+    align-items: center;
 }
 #listaMov div.bloco > .indicador-bom{
     background-color: #168f5e;
