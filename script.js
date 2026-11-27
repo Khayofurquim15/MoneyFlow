@@ -1,8 +1,10 @@
 const formMov = document.getElementById('formMov');
 const listaMov = document.getElementById('listaMov');
+const divSaldo = document.getElementById('saldoTotal');
+const divReceita = document.getElementById('receitaTotal');
+const divDespesa = document.getElementById('despeTotal');
 
 let movimentacoes = [];
-
 
 formMov.addEventListener('submit', (evento)=> { // CHAMA O BOTAO PARA ADICIONAR A MOVIMENTAÇÃO //
 
@@ -48,8 +50,20 @@ function carregarMov(){
     mostrarMov();
 };
 
+
 function mostrarMov(){
     listaMov.innerHTML = ' ';
+    divReceita.innerHTML = ' ';
+    divDespesa.innerHTML = ' ';
+    divSaldo.innerHTML = ' ';
+
+    const soma = receitaConv('receita') - receitaConv('despesa');
+
+    divSaldo.innerHTML = ` ${soma.toLocaleString('pt-br', {style:'currency',currency:'BRL'}).replace("-", "")} `;
+
+    divReceita.innerHTML = ` ${receitaConv('despesa').toLocaleString('pt-br', {style:'currency',currency:'BRL'})} `;
+
+    divDespesa.innerHTML = ` ${receitaConv('receita').toLocaleString('pt-br', {style:'currency',currency:'BRL'})} `;
     
     movimentacoes.forEach(mov => {
 
@@ -113,6 +127,22 @@ function verMais(idDiv){
     };
 };
 
-const saldoTotal = movimentacoes.reduce()
+function receitaConv(nome){
+
+    const arrayLimpo = movimentacoes.filter(mov => mov.tipo != nome);
+
+    const total = arrayLimpo.reduce((acc, move)=> {
+
+        const valorForm = move.valor;
+        const valorLimpo = valorForm
+        .replace("R$", "")
+        .replace(/\s/g, "")
+        .replace(/\./g, "")
+        .replace(",", ".");
+
+        return acc + Number(valorLimpo);
+    }, 0);
+    return total;
+};
 
 carregarMov();
