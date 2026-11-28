@@ -61,9 +61,9 @@ function mostrarMov(){
 
     divSaldo.innerHTML = ` ${soma.toLocaleString('pt-br', {style:'currency',currency:'BRL'}).replace("-", "")} `;
 
-    divReceita.innerHTML = ` ${receitaConv('despesa').toLocaleString('pt-br', {style:'currency',currency:'BRL'})} `;
+    divReceita.innerHTML = `+ ${receitaConv('receita').toLocaleString('pt-br', {style:'currency',currency:'BRL'})} `;
 
-    divDespesa.innerHTML = ` ${receitaConv('receita').toLocaleString('pt-br', {style:'currency',currency:'BRL'})} `;
+    divDespesa.innerHTML = `- ${receitaConv('despesa').toLocaleString('pt-br', {style:'currency',currency:'BRL'})} `;
     
     movimentacoes.forEach(mov => {
 
@@ -129,7 +129,7 @@ function verMais(idDiv){
 
 function receitaConv(nome){
 
-    const arrayLimpo = movimentacoes.filter(mov => mov.tipo != nome);
+    const arrayLimpo = movimentacoes.filter(mov => mov.tipo == nome);
 
     const total = arrayLimpo.reduce((acc, move)=> {
 
